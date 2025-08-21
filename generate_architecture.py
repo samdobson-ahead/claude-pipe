@@ -153,7 +153,12 @@ def main():
     parser = argparse.ArgumentParser(description="Generate architecture from discovery docs via Claude.")
     parser.add_argument("--docs-dir", default="discovery-docs", type=str)
     parser.add_argument("--out-dir", default="outputs", type=str)
-    parser.add_argument("--model", default="claude-3-5-sonnet-20240620", type=str)
+    # Model can be overridden by env var or CLI; default aims at latest Sonnet 4.
+    parser.add_argument(
+        "--model",
+        default=os.getenv("CLAUDE_MODEL", "claude-3-7-sonnet-latest"),
+        type=str,
+    )
     parser.add_argument("--max-tokens", default=4000, type=int)
     args = parser.parse_args()
 
