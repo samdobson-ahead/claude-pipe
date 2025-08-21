@@ -2,7 +2,10 @@
 
 This utility reads discovery documents and asks Claude to produce a reference architecture with a Mermaid diagram and written explanation.
 TLDR - the workflow is like this:
-1. 
+1. Add documents to discovery-docs directory
+2. Run the generate_architecture.py script
+3. Claude ingests the prompt in the script along with the docs in the discovery-docs folder.
+4. Outputs a Mermaid arch diagram and written notes.
 
 ## Setup
 
